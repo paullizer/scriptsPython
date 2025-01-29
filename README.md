@@ -24,7 +24,7 @@ pip install -r ./requirements.txt
 
 ### 1. **Prepare the JWK file**
 
-Save your **RSA JWK** as a JSON file, e.g., `test_key.jwk`. The structure should resemble the following:
+Save your **RSA JWK** as a JSON file in the same location as the script, e.g., `test_key.jwk`. The structure should resemble the following:
 
 ```json
 {
@@ -41,6 +41,16 @@ Save your **RSA JWK** as a JSON file, e.g., `test_key.jwk`. The structure should
     }
 }
 ```
+
+or, update line 77 to point to your JWK instead of test_key.jwk
+
+```python
+    # Load the JWK from file (update filename if needed)
+    with open("test_key.jwk", "r") as f:
+        jwk_data = json.load(f)["key"]
+```
+
+
 
 ### 2. **Run the script**
 
